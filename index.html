@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Accessible Web | About</title>
+        <meta name="description" content="Please disable CSS to view this webpage.">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="@racheleditullio">
+		<meta property="og:url" content="https://accessibleweb.net/demo/">
+		<meta property="og:title" content="Accessible Web">
+		<meta property="og:description" content="Please disable CSS to view this webpage.">
+		<meta property="og:image" content="https://accessibleweb.net/universal-access-logo.png">
+        <link rel="stylesheet" href="styles.css?d=20210715">
+	</head>
+	<body>
+		<header><a href="#content" id="skip-link">Skip to content</a>
+        <h1><a href="/">Accessible Web</a></h1></header>
+        <aside aria-hidden="true">👉 Please disable CSS to view this webpage.</aside>
+		<main class="visuallyhidden">
+         	<p aria-hidden="true">Whew! That's better. So guess what?</p>
+            <h2 id="content">The web is inherently accessible</h2>
+			<blockquote>
+            	"Your weekly reminder that the web is accessible by default and it's our design decisions that stop it being accessible #a11y"
+                <cite>&mdash; <a href="https://twitter.com/Kevmarmol_CT/status/1335914191165804545">Kevin Mar-Molinero on Twitter</a>, 7 December 2020</cite>
+            </blockquote>
+                <p>Why did you have to disable CSS to view this website? No reason other than a <em>design choice</em> that excludes sighted people.</p>
+                <p><strong>Did you know?</strong> This is how many visitors "view" webpages already:</p>
+                <ul>
+                	<li>Search engines</li>
+                    <li>Bots</li>
+                    <li>Site crawlers</li>
+                    <li>Analytics</li>
+                    <li>Blind people</li>
+                </ul>
+                <p>This website is fully accessible to people with <a href="https://www.nvaccess.org/download/">screen readers</a> and Braille displays. But many websites are not due to poor design choices that exclude some people.</p>
+        		<h2>What is web accessibility?</h2>
+                <p>When a page is <strong>accessible</strong>, it was developed with the intention of working for as many people with disabilities as possible. A good place to start learning is the W3C's <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Introduction to Web Accessibility</a>. Find out the different ways people with disabilities interact with the web.</p>
+                <h3>Web Content Accessibility Guidelines (WCAG)</h3>
+                <p>WCAG is a set of success criteria for determining if a page is accessible, led by four guiding principles:</p>
+                <dl>
+                	<dt>Perceivable</dt>
+                    	<dd>Information and user interface components must be presentable to users in ways they can perceive.</dd>
+                    <dt>Operable</dt>
+                    	<dd>User interface components and navigation must be operable.</dd>
+                    <dt>Understandable</dt>
+                    	<dd>Information and the operation of the user interface must be understandable.</dd>
+                    <dt>Robust</dt>
+                    	<dd>Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies.</dd>
+                </dl>
+                <p>These contain guidelines and a hierarchy of success criteria from Level A to Level AAA. Many accessibility laws, and current best practice, point to WCAG 2.1 Level AA compliance. There are 50 discrete success criteria to evaluate, though many are not applicable to all pages. For example, if a page doesn't contain video, you don't have to evaluate against success criteria for captions or audio descriptions.</p>
+                <p><a href="https://www.w3.org/WAI/WCAG21/quickref/">See the full list of success criteria</a></p>
+                <p><strong>Did you know?</strong> The WCAG guidelines were first published in 1999. Web accessibility is not a new concept but a lot of people are learning about it only now.</p>
+                <h2>Semantics</h2>
+                <p>So what's the point? The point is to develop accessible pages from the bottom up, starting with <strong>semantic HTML</strong>. A whole lot of developers think they know HTML but are actually pretty sloppy about it. Many don't think it matters if they use a link or a button, but it does. Every semantic mistake introduces accessibility issues into your code. If you've never really "learned" HTML, check out this <a href="https://websitesetup.org/html-tutorial-beginners/">beginner's guide to writing good HTML</a>.</p>
+                <p>By far, CSS color contrast issues are the most frequent accessibility issues I see, but the HTML ones are problematic too. Outlined below are the top HTML-related accessibility issues I encounter.</p>
+                
+                <h3>Headings</h3>
+                	<p>If you visually scan this page, you can quickly see how it is broken up into sections. That's due to using headings or the h1-h6 elements. It's important that every page have at least one h1 so people and search engines know what the topic of the page is. From there, cascade down to h2, h3, and so on.</p>
+                    <p><strong>Did you know?</strong> People using screen readers can navigate by headings in much the same way that sighted people can visually scan the page for items of importance.</p>
+                <h3>Form labels</h3>
+       	  <p>Every input needs a label. It's really that simple. And best practice is to make that label visible. This helps people remember what information they've entered. Programatically link each pair using the <code>for</code> attribute on the label matching the <code>id</code> attribute on the input.</p>     
+          <p>This enables a couple things:</p>
+          <ul>
+          	<li>People can now click or tap on the label to give focus to the input. This is especially useful for checkboxes and radio buttons that often have small hit areas.</li>
+            <li>People using screen readers will now hear the label announced when the input is in focus.</li>
+           </ul>
+           <fieldset>
+            <legend>Cat's Colors</legend>
+            <p><label for="black"> <input type="checkbox" id="black">Black</label></p>
+            <p><label for="white"> <input type="checkbox" id="white">White</label></p>
+            <p><label for="brown-tabby"> <input type="checkbox" id="brown-tabby">Brown tabby</label></p>
+            <p><label for="orange-tabby"> <input type="checkbox" id="orange-tabby">Orange tabby</label></p>
+            <p><label for="torbie"> <input type="checkbox" id="torbie">Torbie</label></p>
+            <p><label for="gray"> <input type="checkbox" id="gray">Gray</label></p>
+            </fieldset>
+           <p>Many modern browsers do cursory form field validation with the <code>required</code> attribute though error messages are not always accessible. Let assistive technology users know when a field is required by adding the <code>aria-required="true"</code> attribute to inputs.</p>
+           <form>
+                <p><label for="name">Cat's name<span aria-hidden="true"> *</span></label>
+                <input type="text" id="name" aria-required="true" required></p>
+                <p><label for="email">Email</label>
+                <input type="email" id="email" autocomplete="email"></p>
+                <button type="submit">Send</button>
+            </form>                
+                <h3>Buttons and links</h3>
+                <p>Buttons and links seem very similar to some developers but they have very different semantic uses. <strong>Buttons</strong> are used for controls on a page, such as a form submit or toggle, while <strong>links</strong> are used for navigation, literally for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">linking to another page</a>. If you use them interchangeably, people can get confused about what a button or link is going to do when activated.</p>
+                <p>Some people try to make their own custom buttons instead of using the <button aria-label=" ">Button</button> element, which is already accessible:</p>                
+                <ul>
+                	<li>Keyboard focusable</li>
+                    <li>Activated with <kbd>enter</kbd> and <kbd>space</kbd> keys                
+                </ul>
+                
+                <h3>Tables</h3>
+                <p>There are many legitimate uses for tables on the web but they are often coded incorrectly. Much as an input needs its label, a table data cell needs its <strong>table header</strong>. This allows the applicable table header to be read by a screen reader before the table data cell contents. Additionally, tables need captions to provide a description of the table to people using screen readers.</p>
+                <table>
+                	<caption>About my cats</caption>
+                    	<tr>
+                        	<th>Cat's name</th>
+                            <th>Cat's color</th>
+                        </tr>
+                        <tr>
+                        	<td>Luna</td>
+                            <td>torbie</td>
+                        </tr>
+                        <tr>
+                        	<td>Stellan</td>
+                            <td>black and white, long hair</td>
+                        </tr>
+                        <tr>
+                        	<td>Shadow</td>
+                            <td>tabby</td>
+                        </tr>
+                        <tr>
+                        	<td>Brienne</td>
+                            <td>black and white</td>
+                        </tr>
+                </table>
+               <h3>Images</h3>
+               		<p>The one thing about accessibility most people know is that images need alt text. This may seem straightforward but let's look at three examples.</p>
+                    <ol>
+                   <li> <h4>Alt text matters</h4>
+                    <p>Semantically speaking, every image needs an <code>alt=""</code> attribute. This alone will pass an automated accessibility checker. If an image is purely decorative, you can even leave the alt value empty.</p>
+                    <p>But if an image provides context to the content, the alt text must acurately describe the content of the image for people who cannot see it. The alt text for the image below is <em>two cats on an easy chair under a blanket</em>.</p>
+               <p><img src="/about/cats.jpg" width="400" alt="two cats on an easy chair under a blanket"></p></li>
+               
+               <li><h4>SVG</h4>
+               <p>Inline SVG doesn't support the <code>alt</code> attribute. Instead, add a <code>title</code> element with a unique ID inside the <code>svg</code> element. Add the <code>aria-labelledby="uniqueID"</code> attribute to the <code>svg</code> element to label it.</p>
+		       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="160" xmlns:xlink="http://www.w3.org/1999/xlink" aria-labelledby="svg-title">
+                    <title id="svg-title">Purple Hexagon</title>
+                    <polygon class="shape" points="150,75 112.5,140 37.5,140 0,75 37.5,10 112.5,10" fill="#93029c"></polygon>
+                </svg>
+               </li>
+               
+               <li><h4>Charts and maps</h4>
+               <p>Any time you display complicated information, provide a robust description of the key points of the map or chart. All people will benefit from this for reference.</p>
+               <p>No matter how you mark this up&#8212;using <code>figcaption</code> or just a <code>p</code> element&#8212;give that description a unique ID. On the map image, add the attribute <code>aria-describedby="uniqueID"</code>. This programatically connects the image with the description for assistive technologies.</p>
+               <figure>
+               		<img src="/about/cat-map.jpg" alt="a cat lieing on a bed that is divided up into areas" aria-describedby="cat-map">
+               		<figcaption id="cat-map">Cat bed, never used. Pillows show wake for food here and purring zone. Other areas on the bed are listed as grooming salon, sleeping area, launch pad to the bedside table, parlor, heaving spot, napping quarters, meditation area, stretching area, yoga studio, and good attack zone. A black cat sits happily in the middle of the bed.</figcaption>
+               </figure>
+               </li>
+               </ol>
+    			<p>Thanks for reading! Happy accessibility testing.</p>
+		</main>
+        <footer class="visuallyhidden">
+       	  <h2>Colophon</h2>
+        	<p>This site was inspired by <a href="https://heydonworks.com/">Heydon's JavaScript site</a></p>
+            <p>You can catch me on <a href="https://twitter.com/racheleditullio">Twitter @racheleditullio</a></p>
+        </footer>
+	</body>
+</html>

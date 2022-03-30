@@ -1,0 +1,22 @@
+@charset "UTF-8";
+body { background-color: #333}
+a {color: #93029c; text-decoration: none;}
+a:hover, a:focus {color: #93029c; text-decoration: underline;}
+a:visited {color: #93029c; text-decoration: none;}
+a#skip-link {left: -9999em; position: absolute; transform: translateY(-100%);}
+a#skip-link:focus {background: #93029c; padding: 8px; left: 10px; top:45px; position: absolute; border: 1px solid #fff; color: #fff; text-decoration: none}
+a#skip-link:hover {text-decoration: underline;}
+header, aside { margin: 1em auto; max-width: 1000px; }
+h1 {  border-bottom: 25px solid #93029c; padding: 0 1em; font-size: 5em; text-align: center; outline: 2px solid #93029c; color: #93029c; background-color: #fff }
+aside { font-size: 3em; color: #fff;}
+main { padding: 1em; max-width: 1000px; }
+.visuallyhidden {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
