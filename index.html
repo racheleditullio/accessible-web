@@ -63,9 +63,9 @@
                     <p>Buttons are used for controlling actions on the page, such as a form submit button or toggle button.</p>
                     <p>It's preferable to use a native <code>button</code> element instead of creating a custom one:</p>         
                 <ul>
-                	<li>Has the <code>button</code> role</li>
-                    <li>Is keyboard focusable</li>
-                    <li>Is activated with <kbd>ENTER</kbd> and <kbd>SPACE</kbd> keys</li>               
+                	<li>It already has the <code>button</code> role</li>
+                    <li>It's keyboard focusable</li>
+                    <li>It's activated with <kbd>ENTER</kbd> and <kbd>SPACE</kbd> keys</li>               
                 </ul>
                 <p>The <code>button</code> element can have various states depending on its purpose:</p>
                 <dl>
@@ -95,12 +95,12 @@
                     <p>The one thing about accessibility most people know is that many images need a text equivalient. This may seem straightforward but let's look at three examples.</p>
                     <ol>
                         <li>
-                            <h4>Alt text</h4>
+                            <h4 id="alt-text">Alt text</h4>
                                 <p>Semantically speaking, every image needs an <code>alt=""</code> attribute. This alone will pass an automated accessibility checker. If an image is purely decorative, you can even leave the alt value empty.</p>
                                 <p>But if an image provides context to the content, the alt text must acurately describe the content of the image for people who cannot see it. The alt text for the image below is <em>two cats on an easy chair under a blanket</em>.</p>
                                 <p><img src="cats.jpg" width="400" alt="two cats on an easy chair under a blanket"></p></li>
                         <li>
-                            <h4>SVG</h4>
+                            <h4 id="svg">SVG</h4>
                                 <p>Inline SVG doesn't support the <code>alt</code> attribute. Instead, add <code>role="img"</code> to the <code>svg</code> element to identify it as an image. Give it an accessible name using the <code>aria-label</code> attribute on the <code>svg</code>.</p>
                                 <p>The value of the <code>aria-label</code> attribute for the following graph is <em>bar chart showing the years 2016 to 2021 as the percentage of US consumers with a streaming video service increased from 52% to 78%</em>.</p>
                                 <p>Go to the <a href="#tables">Tables</a> section for information on providing access to all data points in the graph.</p>
@@ -180,18 +180,18 @@
                                     </svg>
                         </li>
                         <li>
-                            <h4>Icons</h4>
-                                <p>Any time you display icons that convey meaning to the user, you must provide a text equivalent for users of assisstive technology. For example, it's common to insert an external link icon after link text that opens in a new tab or window.</p>
-                                <p>Icon fonts are not announced reliably by asssistive technology. First, hide the icon using the <code>aria-hidden</code> attribute. Then provide a text equivalent with visually-hidden text.</p>
+                            <h4 id="icons">Icons</h4>
+                                <p>Any time you display icons that convey meaning to the user, you must provide a text equivalent for users of assistive technology. For example, it's common to insert an external link icon after link text that opens in a new tab or window.</p>
+                                <p>Icon fonts are not announced reliably by assistive technology. First, hide the icon using the <code>aria-hidden</code> attribute. Then provide a text equivalent with visually-hidden text.</p>
                                 <ul>
-                                    <li>Unhidden icon: <a href="tel:1-800-799-7233">☎ 1-800-799-SAFE</a></li>
+                                    <li>Exposed icon: <a href="tel:1-800-799-7233">☎ 1-800-799-SAFE</a></li>
                                     <li>Hidden icon: <a href="tel:1-800-799-7233"><span class="visually-hidden">Call <span aria-hidden="true">☎</span></span> 1-800-799-SAFE</a></li>
                             </ul>
                         </li>
                     </ol>
                     <h3 id="tables">Tables</h3>
                         <p>There are many legitimate uses for tables on the web but they are often coded incorrectly. Table data cells need corresponding <strong>table headers</strong>. This allows the applicable table header to be read by a screen reader before the table data cell contents. Additionally, tables need captions to provide a description of the table to people using screen readers.</p>
-                        <p>In the SVG example under Images, we looked at <code>svg</code> bar chart where we provided a snapshot of the data using <code>aria-label</code>. We need to provide all the data in a format that assistive technology can navigate and an easy way to do that is to provide all data points in a <code>table</code>.</p>
+                        <p>In the <a href="#svg">SVG</a> example under Images, we looked at a <code>svg</code> bar chart where we provided a snapshot of the data using <code>aria-label</code>. We need to provide all the data in a format that assistive technology can navigate and an easy way to do that is to provide all data points in a <code>table</code>.</p>
                         <table>
                             <caption>US consumers with a streaming video subscription</caption>
                             <thead>
@@ -247,7 +247,7 @@
                         <p>Many modern browsers do cursory form field validation with the <code>required</code> attribute though error messages are not always accessible. Let assistive technology users know when a field is required by adding the <code>aria-required="true"</code> attribute to inputs.</p>
                         <form>
                             <p><label for="name">Cat's name<span aria-hidden="true"> *</span></label>
-                            <input type="text" id="name" aria-required="true" name="name" required> (<code>required</code>)</p>
+                            <input type="text" id="name" name="name" required> (<code>required</code>)</p>
                             <p><label for="email">Email<span aria-hidden="true"> *</span></label>
                             <input type="email" id="email" autocomplete="email" name="email" aria-required="true"> (<code>aria-required="true"</code>)</p>
                             <button type="submit">Send</button>
