@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Accessible Web | About</title>
+        <meta name="description" content="Please disable CSS to view this webpage.">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="@racheleditullio">
+		<meta property="og:url" content="https://accessibleweb.net/demo/">
+		<meta property="og:title" content="Accessible Web">
+		<meta property="og:description" content="Please disable CSS to view this webpage.">
+		<meta property="og:description" content="Please disable CSS to view this webpage.">
+		<meta property="og:image" content="https://accessibleweb.net/universal-access-logo.png">
+        <link rel="stylesheet" href="styles.css?d=20230727">
+	</head>
+	<body>
+		<header><a href="/">Accessible Web</a></header>
+        <aside><span aria-hidden="true">👉</span> Please disable CSS to view this webpage.</aside>
+		<main class="visuallyhidden">
+            <h1>The web is inherently accessible</h1>
+			<blockquote>
+            	"Your weekly reminder that the web is accessible by default and it's our design decisions that stop it being accessible #a11y"
+                <cite>&mdash; <a href="https://twitter.com/Kevmarmol_CT/status/1335914191165804545">Kevin Mar-Molinero on Twitter</a>, 7 December 2020</cite>
+            </blockquote>
+                <p>Why did you have to disable CSS to view this website? No reason other than a <em>design choice</em> that excludes sighted people.</p>
+                <p><strong>Did you know?</strong> This is how many visitors "view" webpages already:</p>
+                <ul>
+                	<li>Search engines</li>
+                    <li>Bots</li>
+                    <li>Site crawlers</li>
+                    <li>Analytics</li>
+                    <li>Blind people</li>
+                </ul>
+                <p>This website is fully accessible to people with screen readers and Braille displays. But many websites are not due to poor design choices that exclude some people.</p>
+        		<h2>What is web accessibility?</h2>
+                <p>When a page is <strong>accessible</strong>, it was developed with the intention of working for as many people with disabilities as possible. A good place to start learning is the W3C's <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Introduction to Web Accessibility</a>. Find out the different ways people with disabilities interact with the web.</p>
+                <h3>Web Content Accessibility Guidelines (WCAG)</h3>
+                <p>WCAG is a set of success criteria for determining if a page is accessible, led by four guiding principles:</p>
+                <dl>
+                	<dt>Perceivable</dt>
+                    	<dd>Information and user interface components must be presentable to users in ways they can perceive.</dd>
+                    <dt>Operable</dt>
+                    	<dd>User interface components and navigation must be operable.</dd>
+                    <dt>Understandable</dt>
+                    	<dd>Information and the operation of the user interface must be understandable.</dd>
+                    <dt>Robust</dt>
+                    	<dd>Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies.</dd>
+                </dl>
+                <p>These contain guidelines and a hierarchy of success criteria from Level A to Level AAA. Many accessibility laws, and current best practice, point to WCAG 2.1 Level AA compliance. There are 50 discrete success criteria to evaluate, though many are not applicable to all pages. For example, if a page doesn't contain video, you don't have to evaluate against success criteria for captions or audio descriptions.</p>
+                <p><a href="https://www.w3.org/WAI/WCAG21/quickref/">See the full list of success criteria</a></p>
+                <p><strong>Did you know?</strong> The WCAG guidelines were first published in 1999. Web accessibility is not a new concept but a lot of people are learning about it only now.</p>
+                <h2>Semantics</h2>
+                <p>So what's the point? The point is to develop accessible pages from the bottom up, starting with <strong>semantic HTML</strong>. A whole lot of developers think they know HTML but are actually pretty sloppy about it. Many don't think it matters if they use a link or a button, but it does. Every semantic mistake introduces accessibility issues into your code. If you've never really "learned" HTML, check out this <a href="https://websitesetup.org/html-tutorial-beginners/">beginner's guide to writing good HTML</a>.</p>
+                <p>By far, CSS color contrast issues are the most frequent accessibility issues I see, but the HTML ones are problematic too. Outlined below are the top HTML-related accessibility issues I encounter.</p>
+                
+                <h3 id="headings">Headings</h3>
+                	<p>If you visually scan this page, you can quickly see how it is broken up into sections. That's due to using headings or the <code>h1-h6</code> elements. It's important that every page have at least one <code>h1</code> so people and search engines know what the topic of the page is. From there, cascade down to h2, h3, and so on.</p>
+                    <p><strong>Did you know?</strong> People using screen readers can navigate by headings in much the same way that sighted people can visually scan the page for items of importance.</p>                
+                <h3 id="buttons-links">Buttons and links</h3>
+                <p>Buttons and links may seem similar but they have very different semantic uses. If you use them interchangeably, people can get confused about what a button or link is going to do when activated.</p>
+                    <h4>Buttons</h4>
+                    <p>Buttons are used for controlling actions on the page, such as a form submit button or toggle button.</p>
+                    <p>It's preferable to use a native <code>button</code> element instead of creating a custom one:</p>         
+                <ul>
+                    <li>It already has the <code>button</code> role</li>
+                    <li>It's keyboard focusable</li>
+                    <li>It's activated with <kbd>ENTER</kbd> and <kbd>SPACE</kbd> keys</li>             
+                </ul>
+                <p>The <code>button</code> element can have various states depending on its purpose:</p>
+                <dl>
+                    <dt>Collapsed</dt>
+                    <dd><button aria-expanded="false">Menu</button></dd>
+                    <dt>Expanded</dt>
+                    <dd><button aria-expanded="true">Search</button></dd>
+                    <dt>Not pressed</dt>
+                    <dd><button aria-pressed="false">Dark mode</button></dd>
+                    <dt>Pressed</dt>
+                    <dd><button aria-pressed="true">Light mode</button></dd>
+                </dl>
+                <h4>Links</h4>
+                <p>Links are used for navigation, literally for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">linking to another page</a> or place on the same page. When you use a link, people expect to go somewhere new when it's activated.</p>
+                <p>It's important that the link text properly convey the link purpose. Avoid generic text like "click here".</p>
+                <dl>
+                    <dt>Same page link</dt>
+                    <dd><a href="#headings">Headings</a></dd>
+                    <dt>New page link</dt>
+                    <dd><a href="https://accessibleweb.net/">Accessible Web tool</a></dd>
+                    <dt>External link</dt>
+                    <dd><a href="https://www.eff.org/" target="_blank">Electronic Frontier Foundation <span class="visually-hidden">opens in a new tab</span></a></dd>
+                    <dt>Email link</dt>
+                    <dd><a href="mailto:info@eff.org">info@eff.org</a></dd>
+                </dl>
+                <h3 id="images">Images</h3>
+                    <p>The one thing about accessibility most people know is that many images need a text equivalent. This may seem straightforward but let's look at three examples.</p>
+                    <ol>
+                        <li>
+                            <h4 id="alt-text">Alt text</h4>
+                                <p>Semantically speaking, every image needs an <code>alt=""</code> attribute. This alone will pass an automated accessibility checker. If an image is purely decorative, you can even leave the alt value empty.</p>
+                                <p>But if an image provides context to the content, the alt text must acurately describe the content of the image for people who cannot see it. The alt text for the image below is <em>two cats on an easy chair under a blanket</em>.</p>
+                                <p><img src="cats.jpg" width="400" alt="two cats on an easy chair under a blanket"></p></li>
+                        <li>
+                            <h4 id="icons">SVG icons</h4>
+                                <p>Inline SVG doesn't support the <code>alt</code> attribute. For meaningfult icons, add <code>role="img"</code> to the <code>svg</code> element to identify it as an image. Give it an accessible name using the <code>aria-label</code> attribute on the <code>svg</code> element.</p>
+                                <p>For decorative icons, hide the icon from assistive technology by adding the <code>aria-hidden</code> attribute to the <code>svg</code> element.</p>
+                                <ul>
+                                    <li>Meaningful icon: <a href="tel:1-800-799-7233"><svg width="18" role="img" aria-label="Call" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="headset"><path d="M43.999 24.314c0-3.406-2.273-6.201-5.067-6.288v-.349c-.173-3.581-1.745-6.812-4.452-9.083C31.683 6.322 28.105 5.1 24 5.1h-.087c-4.105 0-7.685 1.223-10.394 3.406-2.706 2.271-4.278 5.502-4.454 9.083v.349C6.268 18.026 4 20.821 4 24.227s2.27 6.201 5.065 6.288v.962c0 .699.611 1.223 1.224 1.223.699 0 1.223-.611 1.223-1.31 0-.087-.175-10.218 0-13.711.175-2.97 1.397-5.502 3.581-7.25 2.271-1.834 5.24-2.882 8.733-2.882h.087c3.491 0 6.548.961 8.731 2.882 2.183 1.834 3.406 4.368 3.583 7.25.087 2.182.087 4.367.087 6.55v2.707c.085 2.62.085 5.327-1.137 7.423-1.046 1.834-2.88 3.406-4.539 4.016-1.223.438-2.882.7-4.542.7-.436-.7-1.309-1.224-2.182-1.224-1.485 0-2.62 1.134-2.62 2.62 0 1.486 1.135 2.62 2.62 2.62 1.049 0 1.92-.61 2.359-1.572 1.92 0 3.754-.348 5.151-.872 2.273-.786 4.456-2.796 5.853-5.065.96-1.572 1.308-3.32 1.397-5.154 3.055.087 5.326-2.706 5.326-6.112z" fill-rule="evenodd"></path></svg> 1-800-799-7233</a></li>
+                                    <li>Decorative icon: <a href="#"><svg width="18" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="locator"><path fill-rule="evenodd" d="M12 2C8.13 2 5 5.025 5 9c0 4.284 4.42 10.38 6.24 12.63a.976.976 0 001.53 0C14.58 19.38 19 13.284 19 9c0-3.975-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg> Find a location</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4 id="charts">SVG charts and graphs</h4>
+                                <p>The value of the <code>aria-label</code> attribute for the following graph is <em>bar chart showing the years 2016 to 2021 as the percentage of US consumers with a streaming video service increased from 52% to 78%</em>.</p>
+                                <p>Go to the <a href="#tables">Tables</a> section for information on providing access to all data points in the graph.</p>
+                                <svg width="800" role="img" aria-label="Bar chart showing the years 2016 to 2021 as the percentage of US consumers with a streaming video service increased from 52% to 78%." xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400">
+                                    <rect fill="#ffffff" x="0" y="0" width="650" height="400" rx="0" ry="0"></rect>
+                                    <g data-z-index="0"></g>
+                                    <g data-z-index="1">
+                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 163.5 47 L 163.5 364" opacity="1"></path>
+                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 258.5 47 L 258.5 364" opacity="1"></path>
+                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 354.5 47 L 354.5 364" opacity="1"></path>
+                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 449.5 47 L 449.5 364" opacity="1"></path>
+                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 544.5 47 L 544.5 364" opacity="1"></path>
+                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 639.5 47 L 639.5 364" opacity="1"></path>
+                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 68.5 47 L 68.5 364" opacity="1"></path>
+                                    </g>
+                                    <g data-z-index="1">
+                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 364.5 L 640 364.5" opacity="1"></path>
+                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 301.5 L 640 301.5" opacity="1"></path>
+                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 237.5 L 640 237.5" opacity="1"></path>
+                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 174.5 L 640 174.5" opacity="1"></path>
+                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 110.5 L 640 110.5" opacity="1"></path>
+                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 46.5 L 640 46.5" opacity="1"></path>
+                                    </g>
+                                    <rect fill="none" data-z-index="1" x="69" y="47" width="571" height="317"></rect>
+                                    <g data-z-index="2">
+                                        <path fill="none" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 69 364.5 L 640 364.5"></path>
+                                    </g>
+                                    <g data-z-index="2">
+                                        <text x="0" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 25.116666793823242 205.5)" style="color:#666666;fill:#666666;" y="200">US Consumers</text>
+                                        <path fill="none" data-z-index="7" d="M 69 47 L 69 364"></path></g><g data-z-index="3">
+                                            <g data-z-index="0.1" opacity="1" transform="translate(69,47) scale(1 1)" clip-path="url(#highcharts-3qz26ct-368-)">
+                                                <rect x="30" y="153" width="35" height="165" fill="#004373" opacity="1"></rect>
+                                                <rect x="126" y="115" width="35" height="203" fill="#004373" opacity="1"></rect>
+                                                <rect x="221" y="99" width="35" height="219" fill="#004373" opacity="1"></rect>
+                                                <rect x="316" y="83" width="35" height="235" fill="#004373" opacity="1"></rect>
+                                                <rect x="411" y="71" width="35" height="247" fill="#004373" opacity="1"></rect>
+                                                <rect x="506" y="71" width="35" height="247" fill="#004373" opacity="1"></rect>
+                                            </g>
+                                            <g data-z-index="0.1" opacity="1" transform="translate(69,47) scale(1 1)" clip-path="none"></g>
+                                        </g>
+                                        <g data-z-index="6" opacity="1" transform="translate(69,47) scale(1 1)">
+                                            <g data-z-index="1" transform="translate(35,130)">
+                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">52%</text>
+                                            </g>
+                                            <g data-z-index="1" transform="translate(131,92)">
+                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">64%</text>
+                                            </g>
+                                            <g data-z-index="1" transform="translate(226,76)">
+                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">69%</text>
+                                            </g>
+                                            <g data-z-index="1" transform="translate(321,60)">
+                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">74%</text>
+                                            </g>
+                                            <g data-z-index="1" transform="translate(416,48)">
+                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">78%</text>
+                                            </g>
+                                            <g data-z-index="1" transform="translate(511,48)">
+                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">78%</text>
+                                            </g>
+                                        </g>
+                                        <g data-z-index="7">
+                                            <text x="116.58333333333667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2016</text>
+                                            <text x="211.74999999999667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2017</text>
+                                            <text x="306.9166666666667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2018</text>
+                                            <text x="402.08333333333667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2019</text>
+                                            <text x="497.24999999999665" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2020</text>
+                                            <text x="592.4166666666666" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2021</text>
+                                        </g>
+                                        <g data-z-index="7">
+                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="369" opacity="1">0</text>
+                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="305" opacity="1">20%</text>
+                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="242" opacity="1">40%</text>
+                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="178" opacity="1">60%</text>
+                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="115" opacity="1">80%</text>
+                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="52" opacity="1">100%</text>
+                                        </g>
+                                    </svg>
+                        </li>
+                    </ol>
+                    <h3 id="tables">Tables</h3>
+                        <p>There are many legitimate uses for tables on the web but they are often coded incorrectly. Table data cells need corresponding <strong>table headers</strong>. This allows the applicable table header to be read by a screen reader before the table data cell contents. Additionally, tables need captions to provide a description of the table to people using screen readers.</p>
+                        <p>In the <a href="#charts">SVG charts and graphs</a> example under Images, we looked at a <code>svg</code> bar chart where we provided a snapshot of the data using <code>aria-label</code>. We need to provide all the data in a format that assistive technology can navigate and an easy way to do that is to provide all data points in a <code>table</code>.</p>
+                        <table>
+                            <caption>US consumers with a streaming video subscription</caption>
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>US Consumers</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2016</td>
+                                    <td>52%</td>
+                                </tr>
+                                <tr>
+                                    <td>2017</td>
+                                    <td>64%</td>
+                                </tr>
+                                <tr>
+                                    <td>2018</td>
+                                    <td>69%</td>
+                                </tr>
+                                <tr>
+                                    <td>2019</td>
+                                    <td>74%</td>
+                                </tr>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>78%</td>
+                                </tr>
+                                <tr>
+                                    <td>2021</td>
+                                    <td>78%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    <h3 id="forms">Forms</h3>
+                        <p>Every input needs a label. It's really that simple. The label needs to be visible and persistent (avoid using <code>placeholder</code>). This helps people remember what information they've entered. Programatically link each pair using the <code>for</code> attribute on the label matching the <code>id</code> attribute on the input.</p>     
+                        <p>This enables a couple things:</p>
+                        <ul>
+                            <li>People can now click or tap on the label to give focus to the input. This is especially useful for checkboxes and radio buttons that often have small hit areas.</li>
+                            <li>People using screen readers will now hear the label announced when the input is in focus.</li>
+                        </ul>
+                        <p>Many modern browsers do cursory form field validation with the <code>required</code> attribute though error messages are not always accessible. Let assistive technology users know when a field is required by adding the <code>aria-required="true"</code> attribute to inputs.</p>
+                        <form>
+                            <p><label for="name">Your name (required)</label></p>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                            <p><label for="email">Email (aria-required="true")</label></p>
+                            <input type="email" id="email" autocomplete="email" name="email" aria-required="true">
+                            <p><button type="submit">Send</button></p>
+                        
+                            <p>When you have a group of related form fields, like checkboxes or radio buttons, group them with a <code>fieldset</code> element and provide an accessible name for the group with a <code>legend</code> element.</p>
+                            <fieldset>
+                                <legend>What products are you interested in?</legend>
+                                <p><label for="banking"> <input type="checkbox" id="banking" name="banking">Banking</label></p>
+                                <p><label for="investments"> <input type="checkbox" id="investments" name="investments">Investments</label></p>
+                                <p><label for="loans"> <input type="checkbox" id="loans" name="loans">Loans</label></p>
+                                <p><label for="credit-cards"> <input type="checkbox" id="credit-cards" name="credit-cards">Credit cards</label></p>
+                            </fieldset>
+                        </form>
+                    <h2>In summary</h2>
+                    <ul>
+                        <li>Web accessibility is an ongoing process</li>
+                        <li>Use semantic markup: Native HTML + ARIA</li>
+                        <li>Headings help people navigate</li>
+                        <li>Buttons and links do different things</li>
+                        <li>Images need text equivalents</li>
+                        <li>Use tables for data</li>
+                        <li>Structure forms in accessible ways</li>
+                    </ul>
+		</main>
+        <footer class="visuallyhidden">
+       	  <h2>Colophon</h2>
+        	<p>This site was inspired by <a href="https://web.archive.org/web/20210225073456/https://heydonworks.com/">Heydon's JavaScript site</a></p>
+            <p>You can catch me on <a href="https://twitter.com/racheleditullio">Twitter @racheleditullio</a></p>
+        </footer>
+	</body>
+</html>
