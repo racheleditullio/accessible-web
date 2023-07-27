@@ -13,12 +13,11 @@
 	</head>
 	<body>
 		<header>
-            <h1>Accessible Web</h1>
+            <header><a href="/">Accessible Web</a></header>
         </header>
-        <aside aria-hidden="true">👉 Please disable CSS to view this webpage.</aside>
+        <aside><span aria-hidden="true">👉</span> Please disable CSS to view this webpage.</aside>
 		<main class="visuallyhidden">
-         	<p aria-hidden="true">Whew! That's better. So guess what?</p>
-            <h2 id="content">The web is inherently accessible</h2>
+            <h1 id="content">The web is inherently accessible</h1>
 			<blockquote>
             	"Your weekly reminder that the web is accessible by default and it's our design decisions that stop it being accessible #a11y"
                 <cite>&mdash; <a href="https://twitter.com/Kevmarmol_CT/status/1335914191165804545">Kevin Mar-Molinero on Twitter</a>, 7 December 2020</cite>
@@ -92,106 +91,105 @@
                     <dd><a href="mailto:info@eff.org">info@eff.org</a></dd>
                 </dl>
                 <h3 id="images">Images</h3>
-                    <p>The one thing about accessibility most people know is that many images need a text equivalient. This may seem straightforward but let's look at three examples.</p>
+                    <p>The one thing about accessibility most people know is that many images need a text equivalent. This may seem straightforward but let's look at three examples.</p>
                     <ol>
                         <li>
                             <h4 id="alt-text">Alt text</h4>
                                 <p>Semantically speaking, every image needs an <code>alt=""</code> attribute. This alone will pass an automated accessibility checker. If an image is purely decorative, you can even leave the alt value empty.</p>
                                 <p>But if an image provides context to the content, the alt text must acurately describe the content of the image for people who cannot see it. The alt text for the image below is <em>two cats on an easy chair under a blanket</em>.</p>
                                 <p><img src="cats.jpg" width="400" alt="two cats on an easy chair under a blanket"></p></li>
-                        <li>
-                            <h4 id="svg">SVG</h4>
-                                <p>Inline SVG doesn't support the <code>alt</code> attribute. Instead, add <code>role="img"</code> to the <code>svg</code> element to identify it as an image. Give it an accessible name using the <code>aria-label</code> attribute on the <code>svg</code>.</p>
-                                <p>The value of the <code>aria-label</code> attribute for the following graph is <em>bar chart showing the years 2016 to 2021 as the percentage of US consumers with a streaming video service increased from 52% to 78%</em>.</p>
-                                <p>Go to the <a href="#tables">Tables</a> section for information on providing access to all data points in the graph.</p>
-                                <svg role="img" aria-label="Bar chart showing the years 2016 to 2021 as the percentage of US consumers with a streaming video service increased from 52% to 78%." xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400">
-                                    <rect fill="#ffffff" x="0" y="0" width="650" height="400" rx="0" ry="0"></rect>
-                                    <g data-z-index="0"></g>
-                                    <g data-z-index="1">
-                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 163.5 47 L 163.5 364" opacity="1"></path>
-                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 258.5 47 L 258.5 364" opacity="1"></path>
-                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 354.5 47 L 354.5 364" opacity="1"></path>
-                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 449.5 47 L 449.5 364" opacity="1"></path>
-                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 544.5 47 L 544.5 364" opacity="1"></path>
-                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 639.5 47 L 639.5 364" opacity="1"></path>
-                                        <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 68.5 47 L 68.5 364" opacity="1"></path>
-                                    </g>
-                                    <g data-z-index="1">
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 364.5 L 640 364.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 301.5 L 640 301.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 237.5 L 640 237.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 174.5 L 640 174.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 110.5 L 640 110.5" opacity="1"></path>
-                                        <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 46.5 L 640 46.5" opacity="1"></path>
-                                    </g>
-                                    <rect fill="none" data-z-index="1" x="69" y="47" width="571" height="317"></rect>
-                                    <g data-z-index="2">
-                                        <path fill="none" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 69 364.5 L 640 364.5"></path>
-                                    </g>
-                                    <g data-z-index="2">
-                                        <text x="0" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 25.116666793823242 205.5)" style="color:#666666;fill:#666666;" y="200">US Consumers</text>
-                                        <path fill="none" data-z-index="7" d="M 69 47 L 69 364"></path></g><g class="highcharts-series-group" data-z-index="3">
-                                            <g data-z-index="0.1" opacity="1" transform="translate(69,47) scale(1 1)" clip-path="url(#highcharts-3qz26ct-368-)">
-                                                <rect x="30" y="153" width="35" height="165" fill="#004373" opacity="1" class="highcharts-point"></rect>
-                                                <rect x="126" y="115" width="35" height="203" fill="#004373" opacity="1" class="highcharts-point"></rect>
-                                                <rect x="221" y="99" width="35" height="219" fill="#004373" opacity="1" class="highcharts-point"></rect>
-                                                <rect x="316" y="83" width="35" height="235" fill="#004373" opacity="1" class="highcharts-point"></rect>
-                                                <rect x="411" y="71" width="35" height="247" fill="#004373" opacity="1" class="highcharts-point"></rect>
-                                                <rect x="506" y="71" width="35" height="247" fill="#004373" opacity="1" class="highcharts-point"></rect>
+                                <li>
+                                    <h4 id="icons">SVG icons</h4>
+                                        <p>Inline SVG doesn't support the <code>alt</code> attribute. For meaningfult icons, add <code>role="img"</code> to the <code>svg</code> element to identify it as an image. Give it an accessible name using the <code>aria-label</code> attribute on the <code>svg</code> element.</p>
+                                        <p>For decorative icons, hide the icon from assistive technology by adding the <code>aria-hidden</code> attribute to the <code>svg</code> element.</p>
+                                        <ul>
+                                            <li>Meaningful icon: <a href="tel:1-800-799-7233"><svg width="18" role="img" aria-label="Call" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="headset"><path d="M43.999 24.314c0-3.406-2.273-6.201-5.067-6.288v-.349c-.173-3.581-1.745-6.812-4.452-9.083C31.683 6.322 28.105 5.1 24 5.1h-.087c-4.105 0-7.685 1.223-10.394 3.406-2.706 2.271-4.278 5.502-4.454 9.083v.349C6.268 18.026 4 20.821 4 24.227s2.27 6.201 5.065 6.288v.962c0 .699.611 1.223 1.224 1.223.699 0 1.223-.611 1.223-1.31 0-.087-.175-10.218 0-13.711.175-2.97 1.397-5.502 3.581-7.25 2.271-1.834 5.24-2.882 8.733-2.882h.087c3.491 0 6.548.961 8.731 2.882 2.183 1.834 3.406 4.368 3.583 7.25.087 2.182.087 4.367.087 6.55v2.707c.085 2.62.085 5.327-1.137 7.423-1.046 1.834-2.88 3.406-4.539 4.016-1.223.438-2.882.7-4.542.7-.436-.7-1.309-1.224-2.182-1.224-1.485 0-2.62 1.134-2.62 2.62 0 1.486 1.135 2.62 2.62 2.62 1.049 0 1.92-.61 2.359-1.572 1.92 0 3.754-.348 5.151-.872 2.273-.786 4.456-2.796 5.853-5.065.96-1.572 1.308-3.32 1.397-5.154 3.055.087 5.326-2.706 5.326-6.112z" fill-rule="evenodd"></path></svg> 1-800-799-7233</a></li>
+                                            <li>Decorative icon: <a href="#"><svg width="18" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="locator"><path fill-rule="evenodd" d="M12 2C8.13 2 5 5.025 5 9c0 4.284 4.42 10.38 6.24 12.63a.976.976 0 001.53 0C14.58 19.38 19 13.284 19 9c0-3.975-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg> Find a location</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 id="charts">SVG charts and graphs</h4>
+                                        <p>The value of the <code>aria-label</code> attribute for the following graph is <em>bar chart showing the years 2016 to 2021 as the percentage of US consumers with a streaming video service increased from 52% to 78%</em>.</p>
+                                        <p>Go to the <a href="#tables">Tables</a> section for information on providing access to all data points in the graph.</p>
+                                        <svg width="800" role="img" aria-label="Bar chart showing the years 2016 to 2021 as the percentage of US consumers with a streaming video service increased from 52% to 78%." xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400">
+                                            <rect fill="#ffffff" x="0" y="0" width="650" height="400" rx="0" ry="0"></rect>
+                                            <g data-z-index="0"></g>
+                                            <g data-z-index="1">
+                                                <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 163.5 47 L 163.5 364" opacity="1"></path>
+                                                <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 258.5 47 L 258.5 364" opacity="1"></path>
+                                                <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 354.5 47 L 354.5 364" opacity="1"></path>
+                                                <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 449.5 47 L 449.5 364" opacity="1"></path>
+                                                <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 544.5 47 L 544.5 364" opacity="1"></path>
+                                                <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 639.5 47 L 639.5 364" opacity="1"></path>
+                                                <path fill="none" stroke-dasharray="none" data-z-index="1" d="M 68.5 47 L 68.5 364" opacity="1"></path>
                                             </g>
-                                            <g data-z-index="0.1" opacity="1" transform="translate(69,47) scale(1 1)" clip-path="none"></g>
-                                        </g>
-                                        <g data-z-index="6" opacity="1" transform="translate(69,47) scale(1 1)">
-                                            <g data-z-index="1" transform="translate(35,130)">
-                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">52%</text>
+                                            <g data-z-index="1">
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 364.5 L 640 364.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 301.5 L 640 301.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 237.5 L 640 237.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 174.5 L 640 174.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 110.5 L 640 110.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" d="M 69 46.5 L 640 46.5" opacity="1"></path>
                                             </g>
-                                            <g data-z-index="1" transform="translate(131,92)">
-                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">64%</text>
+                                            <rect fill="none" data-z-index="1" x="69" y="47" width="571" height="317"></rect>
+                                            <g data-z-index="2">
+                                                <path fill="none" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 69 364.5 L 640 364.5"></path>
                                             </g>
-                                            <g data-z-index="1" transform="translate(226,76)">
-                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">69%</text>
-                                            </g>
-                                            <g data-z-index="1" transform="translate(321,60)">
-                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">74%</text>
-                                            </g>
-                                            <g data-z-index="1" transform="translate(416,48)">
-                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">78%</text>
-                                            </g>
-                                            <g data-z-index="1" transform="translate(511,48)">
-                                                <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">78%</text>
-                                            </g>
-                                        </g>
-                                        <g data-z-index="7">
-                                            <text x="116.58333333333667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2016</text>
-                                            <text x="211.74999999999667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2017</text>
-                                            <text x="306.9166666666667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2018</text>
-                                            <text x="402.08333333333667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2019</text>
-                                            <text x="497.24999999999665" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2020</text>
-                                            <text x="592.4166666666666" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2021</text>
-                                        </g>
-                                        <g data-z-index="7">
-                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="369" opacity="1">0</text>
-                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="305" opacity="1">20%</text>
-                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="242" opacity="1">40%</text>
-                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="178" opacity="1">60%</text>
-                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="115" opacity="1">80%</text>
-                                            <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="52" opacity="1">100%</text>
-                                        </g>
-                                    </svg>
-                        </li>
-                        <li>
-                            <h4 id="icons">Icons</h4>
-                                <p>Any time you display icons that convey meaning to the user, you must provide a text equivalent for users of assistive technology. For example, it's common to insert an external link icon after link text that opens in a new tab or window.</p>
-                                <p>Icon fonts are not announced reliably by assistive technology. First, hide the icon using the <code>aria-hidden</code> attribute. Then provide a text equivalent with visually-hidden text.</p>
-                                <ul>
-                                    <li>Exposed icon: <a href="tel:1-800-799-7233">☎ 1-800-799-SAFE</a></li>
-                                    <li>Hidden icon: <a href="tel:1-800-799-7233"><span aria-hidden="true">☎</span> 1-800-799-SAFE</a></li>
-                            </ul>
-                        </li>
+                                            <g data-z-index="2">
+                                                <text x="0" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 25.116666793823242 205.5)" style="color:#666666;fill:#666666;" y="200">US Consumers</text>
+                                                <path fill="none" data-z-index="7" d="M 69 47 L 69 364"></path></g><g data-z-index="3">
+                                                    <g data-z-index="0.1" opacity="1" transform="translate(69,47) scale(1 1)" clip-path="url(#highcharts-3qz26ct-368-)">
+                                                        <rect x="30" y="153" width="35" height="165" fill="#004373" opacity="1"></rect>
+                                                        <rect x="126" y="115" width="35" height="203" fill="#004373" opacity="1"></rect>
+                                                        <rect x="221" y="99" width="35" height="219" fill="#004373" opacity="1"></rect>
+                                                        <rect x="316" y="83" width="35" height="235" fill="#004373" opacity="1"></rect>
+                                                        <rect x="411" y="71" width="35" height="247" fill="#004373" opacity="1"></rect>
+                                                        <rect x="506" y="71" width="35" height="247" fill="#004373" opacity="1"></rect>
+                                                    </g>
+                                                    <g data-z-index="0.1" opacity="1" transform="translate(69,47) scale(1 1)" clip-path="none"></g>
+                                                </g>
+                                                <g data-z-index="6" opacity="1" transform="translate(69,47) scale(1 1)">
+                                                    <g data-z-index="1" transform="translate(35,130)">
+                                                        <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">52%</text>
+                                                    </g>
+                                                    <g data-z-index="1" transform="translate(131,92)">
+                                                        <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">64%</text>
+                                                    </g>
+                                                    <g data-z-index="1" transform="translate(226,76)">
+                                                        <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">69%</text>
+                                                    </g>
+                                                    <g data-z-index="1" transform="translate(321,60)">
+                                                        <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">74%</text>
+                                                    </g>
+                                                    <g data-z-index="1" transform="translate(416,48)">
+                                                        <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">78%</text>
+                                                    </g>
+                                                    <g data-z-index="1" transform="translate(511,48)">
+                                                        <text x="0" data-z-index="1" y="16" style="color:black;font-size:1em;font-weight:bold;fill:black;">78%</text>
+                                                    </g>
+                                                </g>
+                                                <g data-z-index="7">
+                                                    <text x="116.58333333333667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2016</text>
+                                                    <text x="211.74999999999667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2017</text>
+                                                    <text x="306.9166666666667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2018</text>
+                                                    <text x="402.08333333333667" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2019</text>
+                                                    <text x="497.24999999999665" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2020</text>
+                                                    <text x="592.4166666666666" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">2021</text>
+                                                </g>
+                                                <g data-z-index="7">
+                                                    <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="369" opacity="1">0</text>
+                                                    <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="305" opacity="1">20%</text>
+                                                    <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="242" opacity="1">40%</text>
+                                                    <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="178" opacity="1">60%</text>
+                                                    <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="115" opacity="1">80%</text>
+                                                    <text x="70" style="color:#666666;cursor:default;font-size:1em;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="52" opacity="1">100%</text>
+                                                </g>
+                                            </svg>
+                                </li>
                     </ol>
                     <h3 id="tables">Tables</h3>
                         <p>There are many legitimate uses for tables on the web but they are often coded incorrectly. Table data cells need corresponding <strong>table headers</strong>. This allows the applicable table header to be read by a screen reader before the table data cell contents. Additionally, tables need captions to provide a description of the table to people using screen readers.</p>
-                        <p>In the <a href="#svg">SVG</a> example under Images, we looked at a <code>svg</code> bar chart where we provided a snapshot of the data using <code>aria-label</code>. We need to provide all the data in a format that assistive technology can navigate and an easy way to do that is to provide all data points in a <code>table</code>.</p>
+                        <p>In the <a href="#charts">SVG charts and graphs</a> example under Images, we looked at a <code>svg</code> bar chart where we provided a snapshot of the data using <code>aria-label</code>. We need to provide all the data in a format that assistive technology can navigate and an easy way to do that is to provide all data points in a <code>table</code>.</p>
                         <table>
                             <caption>US consumers with a streaming video subscription</caption>
                             <thead>
@@ -227,30 +225,29 @@
                                 </tr>
                             </tbody>
                         </table>
-                    <h3 id="forms">Forms</h3>
+                        <h3 id="forms">Forms</h3>
                         <p>Every input needs a label. It's really that simple. The label needs to be visible and persistent (avoid using <code>placeholder</code>). This helps people remember what information they've entered. Programatically link each pair using the <code>for</code> attribute on the label matching the <code>id</code> attribute on the input.</p>     
                         <p>This enables a couple things:</p>
                         <ul>
                             <li>People can now click or tap on the label to give focus to the input. This is especially useful for checkboxes and radio buttons that often have small hit areas.</li>
                             <li>People using screen readers will now hear the label announced when the input is in focus.</li>
                         </ul>
-                        <p>When you have a group of related form fields, like checkboxes or radio buttons, group them with a <code>fieldset</code> element and provide an accessible name for the group with a <code>legend</code> element.</p>
-                        <fieldset>
-                            <legend>Cat's Colors</legend>
-                            <p><label for="black"> <input type="checkbox" id="black">Black</label></p>
-                            <p><label for="white"> <input type="checkbox" id="white">White</label></p>
-                            <p><label for="brown-tabby"> <input type="checkbox" id="brown-tabby">Brown tabby</label></p>
-                            <p><label for="orange-tabby"> <input type="checkbox" id="orange-tabby">Orange tabby</label></p>
-                            <p><label for="torbie"> <input type="checkbox" id="torbie">Torbie</label></p>
-                            <p><label for="gray"> <input type="checkbox" id="gray">Gray</label></p>
-                            </fieldset>
                         <p>Many modern browsers do cursory form field validation with the <code>required</code> attribute though error messages are not always accessible. Let assistive technology users know when a field is required by adding the <code>aria-required="true"</code> attribute to inputs.</p>
                         <form>
-                            <p><label for="name">Cat's name<span aria-hidden="true"> *</span></label>
-                            <input type="text" id="name" name="name" required> (<code>required</code>)</p>
-                            <p><label for="email">Email<span aria-hidden="true"> *</span></label>
-                            <input type="email" id="email" autocomplete="email" name="email" aria-required="true"> (<code>aria-required="true"</code>)</p>
-                            <button type="submit">Send</button>
+                            <p><label for="name">Your name (required)</label></p>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                            <p><label for="email">Email (aria-required="true")</label></p>
+                            <input type="email" id="email" autocomplete="email" name="email" aria-required="true">
+                            <p><button type="submit">Send</button></p>
+                        
+                            <p>When you have a group of related form fields, like checkboxes or radio buttons, group them with a <code>fieldset</code> element and provide an accessible name for the group with a <code>legend</code> element.</p>
+                            <fieldset>
+                                <legend>What products are you interested in?</legend>
+                                <p><label for="banking"> <input type="checkbox" id="banking" name="banking">Banking</label></p>
+                                <p><label for="investments"> <input type="checkbox" id="investments" name="investments">Investments</label></p>
+                                <p><label for="loans"> <input type="checkbox" id="loans" name="loans">Loans</label></p>
+                                <p><label for="credit-cards"> <input type="checkbox" id="credit-cards" name="credit-cards">Credit cards</label></p>
+                            </fieldset>
                         </form>
                     <h2>In summary</h2>
                     <ul>
@@ -263,5 +260,10 @@
                         <li>Structure forms in accessible ways</li>
                     </ul>
 		</main>
+        <footer class="visuallyhidden">
+            <h2>Colophon</h2>
+            <p>This site was inspired by <a href="https://web.archive.org/web/20210225073456/https://heydonworks.com/">Heydon's JavaScript site</a></p>
+            <p>You can catch me on <a href="https://twitter.com/racheleditullio">Twitter @racheleditullio</a></p>
+       </footer>
 	</body>
 </html>
